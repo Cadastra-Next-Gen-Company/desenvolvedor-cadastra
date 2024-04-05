@@ -1,0 +1,14 @@
+.wrapper-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .375rem;
+  background-color: #000000;
+  margin-top: 2rem;
+
+  .copyright-footer{
+    color: #FFFFFF;
+    font-size: .875rem;
+    font-weight: 400;
+  }
+}

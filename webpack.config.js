@@ -1,5 +1,4 @@
 const path = require("path");
-const webpack = require("webpack");
 
 module.exports = (paths) => ({
   entry: {
@@ -9,16 +8,26 @@ module.exports = (paths) => ({
     path: path.resolve(__dirname, paths.dest),
     filename: "bundle.js",
   },
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
   mode: "development",
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        include: path.resolve(__dirname, paths.scripts.src),
-        use: "ts-loader",
-      },
-    ],
+        test: /\.ts?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-typescript']
+            }
+          },
+          'ts-loader'
+        ]
+      }
+    ]
   },
   plugins: [],
 });

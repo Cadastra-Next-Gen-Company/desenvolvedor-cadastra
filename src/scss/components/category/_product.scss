@@ -1,0 +1,82 @@
+.card-product{
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  align-items: center;
+  max-width: 12.2031rem;
+  margin: 0 auto;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+
+  @media screen and (max-width: 27.5rem){
+    max-width: 10.125rem;
+
+    .img-product{
+      img{
+        max-width: 10.125rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 23.125rem){
+    max-width: 12.2031rem;
+
+    .img-product{
+      img{
+        max-width: 100%;
+      }
+    }
+  }
+
+  .name-product{
+    font-size: .875rem;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .container-price{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .3125rem;
+    text-decoration: none;
+
+    .selling-price{
+      color: #000;
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .installment-price{
+      color: #666666;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
+
+  .btn-buy-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.0625rem;
+    background-color: #000;
+    color: #fff;
+    font-size: .875rem;
+    font-weight: 700;
+    margin-top: .25rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 400ms ease;
+
+    &:hover{
+      border: 1px solid #000;
+      background-color: transparent;
+      color: #000;
+    }
+  }
+}

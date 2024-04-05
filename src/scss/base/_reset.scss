@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 html,
 body,
 div,
@@ -24,6 +26,7 @@ abbr,
 acronym,
 address,
 big,
+button,
 cite,
 code,
 del,
@@ -90,6 +93,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  font-family: "Open Sans", sans-serif;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -126,4 +130,23 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+body{
+  scrollbar-width: 0.5rem;
+  scrollbar-color: #9f9f9f;
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #9f9f9f;
+    border-radius: 0;
+  }
+
+  &::-webkit-scrollbar-track {
+    position: absolute;
+    background: #f1f1f1;
+    border-radius: 0;
+  }
 }

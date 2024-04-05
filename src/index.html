@@ -5,15 +5,129 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="As melhores blusas de diversos modelos da loja Cadastra.">
   <title>Desenvolvedor Cadastra</title>
   <link rel="stylesheet" href="main.css" />
 </head>
-
 <body>
-
+  <div class="wrapper-modal-minicart" id="modalMinicart">
+    <div class="container-modal-minicart" id="containerModalMinicart">
+      <div class="container-minicart-title">
+        <h2 class="minicart-title">Carrinho</h2>
+        <button class="btn-minicart-close" id="btnMinicartClose">
+          <img src="img/icon-close-modal.svg" alt="Botão para fechar o carrinho" />
+        </button>
+      </div>
+      <div class="container-empity-state" id="empityState">
+        <img src="img/icon-empity-state.png" class="empity-state" alt="Icone do carrinho vazio">
+        <p class="info-empity-state">Seu carrinho esta vazio! :(</p>
+      </div>
+      <div class="product-list-modal" id="productListModal"></div>
+    </div>
+  </div>
+  <div class="wrapper-modal-orderBy" id="modalOrderBy">
+    <div class="container-modal-orderBy" id="containerModalOrderBy">
+      <div class="container-orderBy-title">
+        <h2 class="orderBy-title">ordernar</h2>
+        <button class="btn-orderBy-close" id="btnOrderByClose">
+          <img src="img/icon-close-modal.svg" alt="Botão para fechar o carrinho" />
+        </button>
+      </div>
+      <div class="orderBy-list-modal" id="orderByListModal">
+        <button class="option-orderby">Mais recentes</button>
+        <button class="option-orderby">Menor preço</button>
+        <button class="option-orderby">Maior preço</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper-modal-filter" id="modalFilter">
+    <div class="container-modal-filter" id="containerModalFilter">
+      <div class="container-filter-title">
+        <h2 class="filter-title">filtrar</h2>
+        <button class="btn-filter-close" id="btnFilterClose">
+          <img src="img/icon-close-modal.svg" alt="Botão para fechar o carrinho" />
+        </button>
+      </div>
+      <div class="wrapper-filter mob">
+        <div class="container-filter">
+          <h2 class="title-filter">cores</h2>
+          <div class="list-options-filter color">
+            <button class="btn-all-view-filter" id="btnAllViewFilter">Ver todas as cores <img src="./img/icon-arrow-filter.svg" alt="Seta para baixo" /></button>
+          </div>
+        </div>
+        <div class="container-filter">
+          <h2 class="title-filter">tamanhos</h2>
+          <div class="list-options-filter-size"></div>
+        </div>
+        <div class="container-filter">
+          <h2 class="title-filter">faixa de preço</h2>
+          <div class="list-options-filter price"></div>
+        </div>
+      </div>
+      <div class="container-btn-clear-filters">
+        <a href="/" class="btn-clear-filters">limpar</a>
+      </div>
+    </div>
+  </div>
+  <header class="wrapper-header">
+    <section class="container-header">
+      <a href="#" title="Cadastra">
+        <img src="img/logo-cadastra.svg" alt="Logo da Cadastra"/>
+      </a>
+      <button class="btn-minicart" id="btnModalMinicart">
+        <img src="img/icon-minicart.svg" alt="Icone do minicart"/>
+        <p class="number-quantity-minicart"></p>
+      </button>
+    </section>
+  </header>
+  <main class="content-page">
+    <section>
+      <div class="desktop container-title">
+        <h1 class="title-page">Blusas</h1>
+        <div class="wrapper-orderby">
+          <button class="btn-orderby" id="btnOrderBy">Ordenar por: <img src="./img/icon-arrow-orderby.svg" alt="Icone da seta"/></button>
+          <div class="options-orderby" id="optionsOrderBy">
+            <button class="option-orderby">Mais recentes</button>
+            <button class="option-orderby">Menor preço</button>
+            <button class="option-orderby">Maior preço</button>
+          </div>
+        </div>
+      </div>
+      <div class="mobile container-title">
+        <h1 class="title-page">Blusas</h1>
+        <div class="container-filter-and-orderby">
+          <button class="btn-filter-mob" id="btnModalFilter">Filtrar</button>
+          <button class="btn-orderby-mob" id="btnModalOrderBy">Ordenar</button>
+        </div>
+      </div>
+    </section>
+    <section class="content-filter-and-products">
+      <div class="wrapper-filter">
+        <div class="container-filter">
+          <h2 class="title-filter">cores</h2>
+          <div class="list-options-filter color">
+            <button class="btn-all-view-filter" id="btnAllViewFilter">Ver todas as cores <img src="./img/icon-arrow-filter.svg" alt="Seta para baixo" /></button>
+          </div>
+        </div>
+        <div class="container-filter">
+          <h2 class="title-filter">tamanhos</h2>
+          <div class="list-options-filter-size"></div>
+        </div>
+        <div class="container-filter">
+          <h2 class="title-filter">faixa de preço</h2>
+          <div class="list-options-filter price"></div>
+        </div>
+      </div>
+      <div class="wrapper-products">
+        <div class="container-products" id="containerProducts"></div>
+        <button class="btn-all-products" id="btnViewAllProducts">carregar mais</button>
+      </div>
+    </section>
+  </main>
+  <footer class="wrapper-footer">
+    <h2 class="copyright-footer">CADASTRA: Implantação de E-commerce VTEX</h2>
+  </footer>
 </body>
-<h1>Desafio Cadastra</h1>
 
 <script src="bundle.js"></script>
-
 </html>

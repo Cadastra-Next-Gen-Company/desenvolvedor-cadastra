@@ -1,1 +1,7 @@
-@import "reset";
+@import "base/reset";
+@import "base/mixins";
+
+@import "components/header";
+@import "components/footer";
+@import "components/minicart";
+@import "pages/category";

@@ -139,6 +139,36 @@
       "image": "/img/img_10.png",
       "size": ["M"],
       "date": "2003-12-17"
+    },
+    {
+      "id": "10",
+      "name": "Camisa Transparente",
+      "price": 398.0,
+      "parcelamento": [5, 30],
+      "color": "Preto",
+      "image": "/img/img_9.png",
+      "size": ["P"],
+      "date": "2000-11-17"
+    },
+    {
+      "id": "11",
+      "name": "Camisa Transparente",
+      "price": 398.0,
+      "parcelamento": [5, 30],
+      "color": "Preto",
+      "image": "/img/img_9.png",
+      "size": ["P"],
+      "date": "2000-11-17"
+    },
+    {
+      "id": "12",
+      "name": "Camisa Transparente",
+      "price": 398.0,
+      "parcelamento": [5, 30],
+      "color": "Preto",
+      "image": "/img/img_9.png",
+      "size": ["P"],
+      "date": "2000-11-17"
     }
   ]
 }
