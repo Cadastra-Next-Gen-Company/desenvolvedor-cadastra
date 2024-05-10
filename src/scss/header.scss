@@ -5,6 +5,7 @@
   left: 0;
   right: 0;
   background: $white;
+  z-index: 999;
 
   &-content {
     padding: 1rem;
