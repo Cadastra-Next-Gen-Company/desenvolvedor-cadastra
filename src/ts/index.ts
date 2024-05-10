@@ -1,4 +1,4 @@
-import { Product, ListProduct } from "./Product";
+import { ListProduct } from "./Product";
 
 
 const serverUrl = "http://localhost:5000";
@@ -24,7 +24,7 @@ async function generateCardProducts() {
 
   if (products) {
     products.forEach(product => {
-      const cardProduct = document.createElement("div")
+      const cardProduct = document.createElement("li")
       cardProduct.classList.add("card-product")
 
       const imageProduct = document.createElement("img")
