@@ -1,1 +1,8 @@
+@import "fonts";
 @import "reset";
+@import "colors";
+
+
+body {
+  font-family: $font-primary;
+}
