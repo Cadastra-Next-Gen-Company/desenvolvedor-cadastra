@@ -1,0 +1,48 @@
+#products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+
+  .card {
+    &-product {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    &-button {
+      &-sale {
+        background: $black;
+        color: $white;
+        width: 100%;
+        padding: 0.5rem;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 0.5rem;
+        font-weight: bold;
+
+        &:hover {
+          background: $primary-400;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.product {
+  &-title {
+    text-transform: uppercase;
+  }
+
+  &-price {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  &-description {
+    color: #0000008a;
+  }
+}
