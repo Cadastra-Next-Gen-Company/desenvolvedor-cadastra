@@ -1,5 +1,10 @@
 .header {
   border-bottom: 1px solid $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $white;
 
   &-content {
     padding: 1rem;
