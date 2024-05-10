@@ -1,8 +1,10 @@
 @import "fonts";
 @import "reset";
 @import "colors";
+@import "header";
 
-
-body {
-  font-family: $font-primary;
+.container{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }

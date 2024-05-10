@@ -3,6 +3,10 @@
    License: none (public domain)
 */
 
+*{
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,
@@ -107,6 +111,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: $font-primary;
 }
 ol,
 ul {
