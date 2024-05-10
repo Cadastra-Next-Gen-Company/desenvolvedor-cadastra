@@ -8,3 +8,5 @@ export interface Product {
   size: Array<string>;
   date: string;
 }
+
+export type ListProduct = Array<Product>
