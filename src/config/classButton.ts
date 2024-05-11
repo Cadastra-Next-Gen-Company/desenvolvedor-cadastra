@@ -1,0 +1,1 @@
+export const classButtonSizeActive = "button-size-active"
