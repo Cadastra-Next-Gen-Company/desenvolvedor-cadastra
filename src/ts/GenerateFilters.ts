@@ -4,6 +4,8 @@ interface Filter {
 
 export interface GenerateFilters {
   title: string
+  className?: string
+  name?: string
   listFilter: Array<Filter>
   ref: any
 }
