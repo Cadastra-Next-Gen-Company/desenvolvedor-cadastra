@@ -5,3 +5,5 @@ export { generateFilterColors } from "./generateFilterColors"
 export { generateFilterPrice } from "./generateFilterPrice"
 export { generateFilterSize } from './generateFilterSize'
 export { generateFilterButtons } from "./generateFilterButtons"
+export { generateProductNotFound } from "./generateProductNotFound"
+export { clearFilters } from "./clearFilters"

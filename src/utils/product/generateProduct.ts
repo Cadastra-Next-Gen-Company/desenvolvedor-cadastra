@@ -3,6 +3,7 @@ import { formatedPrice } from "../formatted"
 
 export function generateCardProducts({ products }: { products: ListProduct }) {
   const containerProducts = document.getElementById("products")
+  containerProducts.classList.add("product-grid")
 
   if (products) {
     products.forEach(product => {

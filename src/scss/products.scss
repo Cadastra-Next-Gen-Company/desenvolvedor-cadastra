@@ -1,8 +1,12 @@
 #products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding-left: $aside-width;
+  width: 100%;
+  height: 100%;
+
+  &.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 
   .card {
     &-product {
@@ -15,19 +19,7 @@
 
     &-button {
       &-sale {
-        background: $black;
-        color: $white;
-        width: 100%;
-        padding: 0.5rem;
-        text-align: center;
-        text-transform: uppercase;
-        margin-top: 0.5rem;
-        font-weight: bold;
-
-        &:hover {
-          background: $primary-400;
-          color: $black;
-        }
+        @include buttonStandard;
       }
     }
   }

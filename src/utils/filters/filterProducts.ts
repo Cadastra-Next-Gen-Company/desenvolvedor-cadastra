@@ -1,6 +1,7 @@
 import { classButtonSizeActive } from "../../config"
 import { ListProduct } from "../../ts/Product"
 import { generateCardProducts } from "../product"
+import { generateProductNotFound } from "./generateProductNotFound"
 
 export function filterProducts({ products }: { products: ListProduct }): ListProduct {
   const containerProducts = document.getElementById("products")
@@ -75,6 +76,10 @@ export function filterProducts({ products }: { products: ListProduct }): ListPro
   })
 
   containerProducts.innerHTML = ""
-  generateCardProducts({ products: filterPrice })
+  filterPrice.length === 0 && products.length > 0 ?
+    generateProductNotFound({ products: products })
+    :
+    generateCardProducts({ products: filterPrice })
+
   return filterSize
 }

@@ -1,0 +1,15 @@
+@mixin buttonStandard {
+  background: $black;
+  color: $white;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-weight: bold;
+
+  &:hover {
+    background: $primary-400;
+    color: $black;
+  }
+}
