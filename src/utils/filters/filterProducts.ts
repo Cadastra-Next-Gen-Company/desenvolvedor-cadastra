@@ -33,8 +33,6 @@ export function filterProducts({ products }: { products: ListProduct }): ListPro
     }
   }
   )
-
-  console.log("ok")
   containerProducts.innerHTML = ""
   generateCardProducts({ products: filterSize })
   return filterSize
