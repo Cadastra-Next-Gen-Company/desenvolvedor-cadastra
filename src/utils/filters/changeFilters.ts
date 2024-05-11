@@ -28,6 +28,11 @@ export function changeFilters({ products }: { products: ListProduct }) {
 
   priceCheckboxes.forEach((checkbox: HTMLInputElement) => {
     checkbox.addEventListener("change", () => {
+      priceCheckboxes.forEach((otherCheckbox: HTMLInputElement) => {
+        if (otherCheckbox !== checkbox) {
+          otherCheckbox.checked = false
+        }
+      })
       filterProducts({ products })
     })
   })
