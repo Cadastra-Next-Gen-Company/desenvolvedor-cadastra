@@ -1,0 +1,1 @@
+export { formatedPrice } from "./price"
