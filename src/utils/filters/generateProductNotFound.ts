@@ -14,7 +14,6 @@ export function generateProductNotFound({ products }: { products: ListProduct })
   const buttonClearFilter = document.createElement('button')
   buttonClearFilter.innerText = "Limpar Filtro"
   buttonClearFilter.addEventListener("click", () => {
-    console.log("BUTON", products)
     clearFilters({ products })
   })
 

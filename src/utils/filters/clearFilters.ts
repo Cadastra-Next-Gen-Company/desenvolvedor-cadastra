@@ -26,7 +26,6 @@ export function clearFilters({ products }: { products: ListProduct }) {
     }
   })
   containerProducts.innerHTML = ""
-  console.log("LIMPANDO TUDO", products)
   filterProducts({ products })
 
 }
