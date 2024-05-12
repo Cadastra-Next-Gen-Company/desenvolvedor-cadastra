@@ -18,9 +18,22 @@
       object-fit: contain;
     }
 
-    .icone-compra {
-      width: 20px;
-      object-fit: contain;
+    .button-cart {
+      padding: 0.3rem;
+      border-radius: 4px;
+      height: 30px;
+      width: 30px;
+      background: transparent;
+
+      &:hover{
+        background: #00000030;
+      }
+
+      .icone-compra {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
     }
   }
 }
