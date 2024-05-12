@@ -16,18 +16,25 @@
 
 .main {
   height: 100%;
-  padding: 76px 1rem 1rem 1rem;
-  display: flex;
-  gap: 1rem;
-  position: relative;
+  padding: 72px 1rem 1rem 1rem;
 
-  #aside-filters {
-    width: 100%;
-    max-width: $aside-width;
+  .content {
     display: flex;
-    flex-direction: column;
+    position: relative;
     gap: 1rem;
-    position: fixed;
+    
+    #aside-filters {
+      width: 100%;
+      max-width: $aside-width;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      position: fixed;
+
+      .title {
+        font-size: 1.6rem;
+      }
+    }
   }
 
   #products-container {
