@@ -4,7 +4,8 @@ import {
   generateFilterColors,
   generateFilterPrice,
   generateFilterSize,
-  getProducts
+  getProducts,
+  quantityProductInCart
 } from "../utils";
 
 async function main() {
@@ -15,6 +16,7 @@ async function main() {
   generateFilterPrice()
   generateCardProducts({ products })
   changeFilters({ products })
+  quantityProductInCart()
 }
 
 document.addEventListener("DOMContentLoaded", main);

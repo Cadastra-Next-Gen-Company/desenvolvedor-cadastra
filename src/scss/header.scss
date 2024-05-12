@@ -18,14 +18,15 @@
       object-fit: contain;
     }
 
-    .button-cart {
+    #button-cart {
       padding: 0.3rem;
       border-radius: 4px;
       height: 30px;
       width: 30px;
       background: transparent;
+      position: relative;
 
-      &:hover{
+      &:hover {
         background: #00000030;
       }
 
@@ -33,6 +34,25 @@
         width: 18px;
         height: 18px;
         object-fit: contain;
+      }
+
+      .cart-quantity-products {
+        background: $primary-400;
+        border-radius: 100px;
+        height: 18px;
+        width: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: $white;
+
+        p {
+          font-size: 0.7rem;
+        }
       }
     }
   }
