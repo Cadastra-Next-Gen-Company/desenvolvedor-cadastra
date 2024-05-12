@@ -1,0 +1,55 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-content {
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px #00000030;
+    background: $white;
+
+    max-width: 800px;
+    max-height: 600px;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+
+  &-button-close {
+    background: $color-error;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    color: $white;
+    height: 30px;
+    width: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-selected-size-product {}
+}

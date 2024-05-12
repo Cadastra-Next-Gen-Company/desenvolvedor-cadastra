@@ -1,5 +1,6 @@
 import { ListProduct } from "../../ts/Product"
 import { formatedPrice } from "../formatted"
+import { addProductInCart } from "./addProductInCart"
 
 export function generateCardProducts({ products }: { products: ListProduct }) {
   const containerProducts = document.getElementById("products")
@@ -31,6 +32,7 @@ export function generateCardProducts({ products }: { products: ListProduct }) {
       const button = document.createElement("button")
       button.innerText = "comprar"
       button.classList.add("card-button-sale")
+      button.addEventListener("click", () => addProductInCart({ product }))
 
       cardProduct.appendChild(imageProduct)
       cardProduct.appendChild(titleProduct)
