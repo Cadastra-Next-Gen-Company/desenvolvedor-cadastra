@@ -1,7 +1,14 @@
+import { contentFilters } from "../../components";
 import { ListProduct } from "../../ts/Product";
-import { generateFilterButtons } from "./generateFilterButtons";
 
-export function generateFilterSize({ products }: { products: ListProduct }) {
+interface GenerateFilterSize {
+  products: ListProduct
+  parent: HTMLElement
+  isMobile: boolean
+  title: string
+}
+
+export function generateFilterSize({ products, parent, isMobile, title }: GenerateFilterSize) {
   const letterSizes: Array<string> = [];
   const numberSizes: Array<number> = [];
 
@@ -30,11 +37,27 @@ export function generateFilterSize({ products }: { products: ListProduct }) {
   const sortedSizes = [...letterSizes, ...numberSizes.map(String)];
 
   if (sortedSizes.length > 0) {
-    const containerFilter = document.getElementById("aside-filters");
-    generateFilterButtons({
-      listFilter: sortedSizes.map(size => ({ title: size })),
-      ref: containerFilter,
-      title: "Tamanhos"
+
+    const details = document.createElement("details")
+    const summary = document.createElement("summary")
+    const iconSummary = document.createElement("p")
+
+    iconSummary.innerText = "↓"
+    summary.innerText = title
+    summary.appendChild(iconSummary)
+    
+    contentFilters({
+      className: "button-size",
+      options: sortedSizes.map(size => ({ title: size })),
+      parent: isMobile ? details : parent,
+      title: !isMobile && title,
+      type: "button"
     })
+
+    if (isMobile) {
+      details.appendChild(summary)
+      parent.appendChild(details)
+    }
   }
+
 }

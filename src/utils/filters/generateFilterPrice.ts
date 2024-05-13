@@ -1,6 +1,14 @@
-import { generateFiltersCheckbox } from "./generateFiltersCheckbox"
+import { contentFilters } from "../../components"
+import { ListProduct } from "../../ts/Product"
 
-export function generateFilterPrice() {
+
+interface GenerateFilterPrice {
+  parent: HTMLElement
+  isMobile: boolean
+  title: string
+}
+
+export function generateFilterPrice({ parent, isMobile, title }: GenerateFilterPrice) {
 
   const prices = [
     {
@@ -23,21 +31,32 @@ export function generateFilterPrice() {
       fromPrice: 500,
       toPrice: Infinity
     },
-
   ]
 
-  const containerFilter = document.getElementById("aside-filters")
+  const details = document.createElement("details")
+  const summary = document.createElement("summary")
+  const iconSummary = document.createElement("p")
+  
+  iconSummary.innerText = "↓"
+  summary.innerText = title
+  summary.appendChild(iconSummary)
 
-  generateFiltersCheckbox({
-    listFilter: prices.map(price => ({
+  contentFilters({
+    className: "price-checkbox",
+    nameCheckbox: "prices",
+    options: prices.map(price => ({
       title: price.toPrice === Infinity ?
         `apartir de R$ ${price.fromPrice}`
         :
         `de R$ ${price.fromPrice} até R$ ${price.toPrice}`
     })),
-    name: "prices",
-    className: "price-checkbox",
-    ref: containerFilter,
-    title: "Faixa de preço"
+    type: "checkbox",
+    parent: isMobile ? details : parent,
+    title: !isMobile && title,
   })
+
+  if (isMobile) {
+    details.appendChild(summary)
+    parent.appendChild(details)
+  }
 }

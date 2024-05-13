@@ -1,7 +1,14 @@
+import { contentFilters } from "../../components"
 import { ListProduct } from "../../ts/Product"
-import { generateFiltersCheckbox } from "./generateFiltersCheckbox"
 
-export function generateFilterColors({ products }: { products: ListProduct }) {
+interface GenerateFilterColors {
+  products: ListProduct
+  parent: HTMLElement
+  isMobile: boolean
+  title: string
+}
+
+export function generateFilterColors({ products, parent, isMobile, title }: GenerateFilterColors) {
   const colors: Array<string> = []
 
   products.forEach(product => {
@@ -11,16 +18,27 @@ export function generateFilterColors({ products }: { products: ListProduct }) {
     }
   })
 
-  if (colors.length > 0) {
-    const containerFilter = document.getElementById("aside-filters")
+  const details = document.createElement("details")
+  const summary = document.createElement("summary")
+  const iconSummary = document.createElement("p")
+  
+  iconSummary.innerText = "↓"
+  summary.innerText = title
+  summary.appendChild(iconSummary)
 
-    generateFiltersCheckbox({
-      listFilter: colors.map(color => ({ title: color })),
+  if (colors.length > 0) {
+    contentFilters({
       className: "color-checkbox",
-      name: "colors",
-      ref: containerFilter,
-      title: "Cores"
+      parent: isMobile ? details : parent,
+      options: colors.map(color => ({ title: color })),
+      type: "checkbox",
+      nameCheckbox: "colors",
+      title: !isMobile && title
     })
   }
 
+  if (isMobile) {
+    details.appendChild(summary)
+    parent.appendChild(details)
+  }
 }
