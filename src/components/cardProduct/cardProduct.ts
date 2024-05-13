@@ -1,5 +1,5 @@
 import { Product } from "../../ts/Product";
-import { addProductInCart, formatedPrice } from "../../utils";
+import { addProductInCart, changeProductInCart, formatedPrice } from "../../utils";
 
 interface CardProduct {
   product: Product
@@ -40,6 +40,7 @@ export function cardProduct({ product, parent, cart }: CardProduct) {
       "product-in-cart-button", "product-in-cart-button-remove"
     )
     buttonRemoveProductElement.innerText = "-"
+    buttonRemoveProductElement.addEventListener("click", () => changeProductInCart({ action: "remove", product }))
 
     const quantityProduct = document.createElement("p")
     quantityProduct.innerText = product.quantity.toString()
@@ -49,6 +50,7 @@ export function cardProduct({ product, parent, cart }: CardProduct) {
       "product-in-cart-button", "product-in-cart-button-add"
     )
     buttonAddProductElement.innerText = "+"
+    buttonAddProductElement.addEventListener("click", () => changeProductInCart({ action: "add", product }))
 
     areaButtonsProductElement.appendChild(buttonRemoveProductElement)
     areaButtonsProductElement.appendChild(quantityProduct)

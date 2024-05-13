@@ -4,7 +4,8 @@ import { modal } from "../modal/modal";
 
 export function productsInCart({ products }: { products: ListProduct }) {
   const productsElement = document.createElement("ul")
-  productsElement.classList.add("products-in-cart", "products", "product-grid")
+  productsElement.classList.add("products", "product-grid")
+  productsElement.id = "products-in-cart"
 
   products.map((product: Product) => {
     cardProduct({
