@@ -7,8 +7,9 @@
 @import "products";
 @import "filters";
 @import "productNotFound";
-@import "../components/modal//modal";
+@import "../components/modal/modal";
 @import "../components/resultAction/resultAction";
+@import "../components/productsInCart/productsInCart";
 
 .container {
   width: 100%;

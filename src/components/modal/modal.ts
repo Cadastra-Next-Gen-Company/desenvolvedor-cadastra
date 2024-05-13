@@ -25,13 +25,17 @@ export function modal({ title, children }: Modal) {
     containerModal.remove()
   })
 
+  const childrenElement = document.createElement("div")
+  childrenElement.classList.add("modal-children")
+
+  childrenElement.appendChild(children)
 
   headerModal.appendChild(titleHeaderModal)
   headerModal.appendChild(buttonCloseModal)
 
   contentModal.appendChild(headerModal)
 
-  contentModal.appendChild(children)
+  contentModal.appendChild(childrenElement)
 
   containerModal.appendChild(contentModal)
   bodyElement.appendChild(containerModal)
