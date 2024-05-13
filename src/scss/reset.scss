@@ -3,6 +3,14 @@
    License: none (public domain)
 */
 
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root{
+  height: 100%;
+}
+
 html,
 body,
 div,
@@ -91,6 +99,7 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -105,17 +114,22 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
+  font-family: $font-primary;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -123,7 +137,15 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+button {
+  border: none;
+  outline: none;
+  transition: all 0.3s;
+  cursor: pointer;
 }

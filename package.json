@@ -1,5 +1,5 @@
 {
-n  "version": "1.0.0",
+  "version": "1.0.0",
   "description": "Desafio da Cadastra para novos colaboradores",
   "main": "index.js",
   "scripts": {

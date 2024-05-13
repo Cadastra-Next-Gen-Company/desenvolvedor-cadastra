@@ -1,9 +1,25 @@
-import { Product } from "./Product";
+import {
+  addEventInCartButton,
+  changeFilters,
+  generateCardProducts,
+  getMoreProduct,
+  getProducts,
+  handleVisibleFilter,
+  quantityProductInCart
+} from "../utils";
+import { generateFilters } from "../utils/filters/generateFilters";
 
-const serverUrl = "http://localhost:5000";
+async function main() {
+  const products = await getProducts()
 
-function main() {
-  console.log(serverUrl);
+  generateFilters({ products })
+  generateCardProducts({ products })
+  changeFilters({ products })
+  quantityProductInCart()
+  addEventInCartButton()
+  handleVisibleFilter()
+
+  getMoreProduct()
 }
 
 document.addEventListener("DOMContentLoaded", main);

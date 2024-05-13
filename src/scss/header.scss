@@ -1,0 +1,59 @@
+.header {
+  border-bottom: 1px solid $black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: $white;
+  z-index: 999;
+
+  &-content {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    .logo {
+      width: 100%;
+      max-width: 150px;
+      object-fit: contain;
+    }
+
+    #button-cart {
+      padding: 0.3rem;
+      border-radius: 4px;
+      height: 30px;
+      width: 30px;
+      background: transparent;
+      position: relative;
+
+      &:hover {
+        background: #00000030;
+      }
+
+      .icone-compra {
+        width: 18px;
+        height: 18px;
+        object-fit: contain;
+      }
+
+      .cart-quantity-products {
+        background: $primary-400;
+        border-radius: 100px;
+        height: 18px;
+        width: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: $white;
+
+        p {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+}

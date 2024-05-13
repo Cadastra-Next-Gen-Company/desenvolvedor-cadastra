@@ -1,0 +1,94 @@
+.filter {
+  &-title {
+    font-size: 20px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  &-checkbox-list {
+    .filter-option {
+      margin-bottom: 0.3rem;
+
+      .checkbox-label {
+        cursor: pointer;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        font-size: 14px;
+
+        input {
+          height: 1rem;
+          width: 1rem;
+        }
+
+      }
+    }
+  }
+
+  &-button-list {
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    gap: 0.3rem;
+
+    .filter-option {
+      button {
+        height: 30px;
+        width: 30px;
+        border-radius: 0.2rem;
+        border: 1px solid $text-opacity;
+        color: $text-opacity;
+        background: transparent;
+
+        &:hover {
+          border-color: $primary-400;
+          color: $black;
+        }
+
+        &.button-size-active {
+          border-color: $primary-400;
+          color: $black;
+        }
+      }
+    }
+  }
+
+  &-area-button-mobile {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    .filter {
+      &-button {
+        &-apply {
+          @include buttonStandard;
+          background: $primary-400;
+
+          &:hover {
+            opacity: 0.8;
+            background: $primary-400;
+            color: $white;
+          }
+        }
+
+        &-clear {
+          @include buttonStandard;
+          background: transparent;
+          border: 1px solid $secondary-400;
+          color: $secondary-400;
+
+          &:hover {
+            color: $secondary-400;
+            opacity: 0.8;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+
+
+}

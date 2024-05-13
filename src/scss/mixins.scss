@@ -1,0 +1,24 @@
+@mixin buttonStandard {
+  background: $black;
+  color: $white;
+  width: 100%;
+  padding: 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0.5rem;
+  font-weight: bold;
+
+  &:hover {
+    background: $primary-400;
+    color: $black;
+  }
+}
+
+@mixin textEllipsis($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  line-height: 1.4em;
+}
