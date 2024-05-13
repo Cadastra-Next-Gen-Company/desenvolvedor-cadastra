@@ -44,4 +44,11 @@ export function generateFilters({ products }: { products: ListProduct }) {
 
   }
 
+  document.body.onresize = () => {
+    if (document.body.clientWidth < 768) {
+      containerFilterElement.style.display = "none"
+    } else {
+      containerFilterElement.style.display = "flex"
+    }
+  }
 }
