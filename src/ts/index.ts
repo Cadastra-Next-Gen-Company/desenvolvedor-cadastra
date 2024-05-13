@@ -1,4 +1,5 @@
 import {
+  addEventInCartButton,
   changeFilters,
   generateCardProducts,
   generateFilterColors,
@@ -17,6 +18,7 @@ async function main() {
   generateCardProducts({ products })
   changeFilters({ products })
   quantityProductInCart()
+  addEventInCartButton()
 }
 
 document.addEventListener("DOMContentLoaded", main);
