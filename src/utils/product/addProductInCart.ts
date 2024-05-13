@@ -1,21 +1,15 @@
 
 import { resultAction } from "../../components";
 import { localStorageProductsKey } from "../../config/localStorageKeys";
-import { Product } from "../../ts/Product";
+import { ListProduct, Product } from "../../ts/Product";
 import { changeQuantityCartProducts, quantityProductInCart } from "../cart";
 import { getItemLocalStorage, setItemLocalStorage } from "../localStorage";
-
-interface ProductCart extends Product {
-  quantity: number
-}
-
-type ListProductCart = Array<ProductCart>
 
 export async function addProductInCart({ product }: { product: Product }) {
 
   try {
     const response = getItemLocalStorage(localStorageProductsKey)
-    const productsLocalStorage: ListProductCart = []
+    const productsLocalStorage: ListProduct = []
 
     if (response) {
       productsLocalStorage.push(...response)

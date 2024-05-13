@@ -7,6 +7,7 @@ export interface Product {
   image: string;
   size: Array<string>;
   date: string;
+  quantity?: number
 }
 
 export type ListProduct = Array<Product>
