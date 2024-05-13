@@ -25,7 +25,7 @@
     }
   }
 
-  &-sizes-list {
+  &-button-list {
     display: grid;
     grid-template-columns: repeat(4, 30px);
     gap: 0.3rem;
@@ -41,14 +41,54 @@
 
         &:hover {
           border-color: $primary-400;
-          color: $primary-400;
+          color: $black;
         }
 
         &.button-size-active {
           border-color: $primary-400;
-          color: $primary-400;
+          color: $black;
         }
       }
     }
   }
+
+  &-area-button-mobile {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+
+    .filter {
+      &-button {
+        &-apply {
+          @include buttonStandard;
+          background: $primary-400;
+
+          &:hover {
+            opacity: 0.8;
+            background: $primary-400;
+            color: $white;
+          }
+        }
+
+        &-clear {
+          @include buttonStandard;
+          background: transparent;
+          border: 1px solid $secondary-400;
+          color: $secondary-400;
+
+          &:hover {
+            color: $secondary-400;
+            opacity: 0.8;
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+
+
 }

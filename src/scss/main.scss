@@ -20,16 +20,106 @@
 .main {
   height: 100%;
   padding: 72px 1rem 1rem 1rem;
-
+  
   .content {
+    position: relative;
     #aside-filters {
+      position: fixed;
       display: none;
+      background: $white;
+      z-index: 9999;
+      flex-direction: column;
+
+
+      .header-aside {
+        width: 100%;
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        border-bottom: 1px solid $secondary-400;
+
+        .title {
+          font-size: 1.6rem;
+        }
+
+        button {
+          background: transparent;
+          height: 30px;
+          width: 30px;
+          border-radius: 4px;
+
+          &:hover {
+            background: $color-error;
+            color: $white;
+          }
+        }
+      }
+
+      details {
+        margin-left: 1rem;
+        cursor: pointer;
+
+        summary {
+          margin-bottom: 1rem;
+          text-transform: uppercase;
+          list-style-type: '';
+          display: flex;
+          justify-content: space-between;
+          padding-right: 1.5rem;
+        }
+
+        &[open] {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .mobile-actions {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .mobile-area-actions {
+        display: flex;
+        margin-bottom: 1rem;
+
+        button {
+          padding: 0.5rem 1rem;
+          background: transparent;
+          border: 1px solid $secondary-400;
+          font-size: 1rem;
+
+          &:hover {
+            border-color: $primary-400;
+            color: $primary-400;
+          }
+        }
+      }
     }
   }
 
   #products-container {
     width: 100%;
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #aside-filters {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 }
 
@@ -42,15 +132,24 @@
 
       #aside-filters {
         width: 100%;
-        max-width: $aside-width;
         display: flex;
-        flex-direction: column;
+        max-width: $aside-width;
+        background: transparent;
         gap: 1rem;
-        position: fixed;
 
-        .title {
-          font-size: 1.6rem;
+        .header-aside {
+          border: none;
+          margin-bottom: 0;
+          padding: 0;
+
+          button {
+            display: none;
+          }
         }
+      }
+
+      .mobile-actions {
+        display: none;
       }
 
       #products-container {
