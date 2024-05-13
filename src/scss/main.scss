@@ -125,6 +125,13 @@
   }
 }
 
+.footer {
+  background: $black;
+  color: $white;
+  padding: 0.3rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   #aside-filters {
     top: 0;
