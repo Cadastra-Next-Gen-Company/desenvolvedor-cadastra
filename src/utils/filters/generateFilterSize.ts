@@ -1,63 +1,38 @@
 import { contentFilters } from "../../components";
-import { ListProduct } from "../../ts/Product";
 
 interface GenerateFilterSize {
-  products: ListProduct
   parent: HTMLElement
   isMobile: boolean
   title: string
 }
 
-export function generateFilterSize({ products, parent, isMobile, title }: GenerateFilterSize) {
-  const letterSizes: Array<string> = [];
-  const numberSizes: Array<number> = [];
+export function generateFilterSize({ parent, isMobile, title }: GenerateFilterSize) {
 
-  products.forEach(product => {
-    product.size.forEach(size => {
-      if (isNaN(parseInt(size))) {
-        if (!letterSizes.includes(size)) {
-          letterSizes.push(size);
-        }
-      } else {
-        const number = parseInt(size)
-        if (!numberSizes.includes(number)) {
-          numberSizes.push(number);
-        }
-      }
-    });
-  });
+  const sizes: Array<string> = [
+    "P", "M", "G", "GG", "U",
+    "36", "38", "40", "44", "46"
+  ]
 
-  const letterOrder = ["P", "M", "G", "GG", "U"];
-  letterSizes.sort((a, b) => {
-    return letterOrder.indexOf(a) - letterOrder.indexOf(b);
-  });
+  const details = document.createElement("details")
+  const summary = document.createElement("summary")
+  const iconSummary = document.createElement("p")
 
-  numberSizes.sort((a, b) => a - b);
+  iconSummary.innerText = "↓"
+  summary.innerText = title
+  summary.appendChild(iconSummary)
 
-  const sortedSizes = [...letterSizes, ...numberSizes.map(String)];
+  contentFilters({
+    className: "button-size",
+    options: sizes.map(size => ({ title: size })),
+    parent: isMobile ? details : parent,
+    title: !isMobile && title,
+    type: "button"
+  })
 
-  if (sortedSizes.length > 0) {
-
-    const details = document.createElement("details")
-    const summary = document.createElement("summary")
-    const iconSummary = document.createElement("p")
-
-    iconSummary.innerText = "↓"
-    summary.innerText = title
-    summary.appendChild(iconSummary)
-    
-    contentFilters({
-      className: "button-size",
-      options: sortedSizes.map(size => ({ title: size })),
-      parent: isMobile ? details : parent,
-      title: !isMobile && title,
-      type: "button"
-    })
-
-    if (isMobile) {
-      details.appendChild(summary)
-      parent.appendChild(details)
-    }
+  if (isMobile) {
+    details.appendChild(summary)
+    parent.appendChild(details)
   }
+
 
 }

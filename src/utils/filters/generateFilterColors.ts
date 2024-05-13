@@ -2,21 +2,24 @@ import { contentFilters } from "../../components"
 import { ListProduct } from "../../ts/Product"
 
 interface GenerateFilterColors {
-  products: ListProduct
   parent: HTMLElement
   isMobile: boolean
   title: string
 }
 
-export function generateFilterColors({ products, parent, isMobile, title }: GenerateFilterColors) {
-  const colors: Array<string> = []
-
-  products.forEach(product => {
-    const color = product.color
-    if (!colors.includes(color)) {
-      colors.push(color)
-    }
-  })
+export function generateFilterColors({ parent, isMobile, title }: GenerateFilterColors) {
+  const colors: Array<string> = [
+    "Amarelo",
+    "Azul",
+    "Branco",
+    "Cinza",
+    "Laranja",
+    "Verde",
+    "Vermelho",
+    "Preto",
+    "Rosa",
+    "Vinho"
+  ]
 
   const details = document.createElement("details")
   const summary = document.createElement("summary")

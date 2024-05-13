@@ -11,8 +11,8 @@ export function generateFilters({ products }: { products: ListProduct }) {
 
   let isMobile = bodyWidth < 768
 
-  generateFilterColors({ products, title: "Cores", parent: containerFilterElement, isMobile })
-  generateFilterSize({ products, title: "Tamanhos", parent: containerFilterElement, isMobile })
+  generateFilterColors({ title: "Cores", parent: containerFilterElement, isMobile })
+  generateFilterSize({ title: "Tamanhos", parent: containerFilterElement, isMobile })
   generateFilterPrice({ title: "Faixa de preço", parent: containerFilterElement, isMobile })
 
   if (isMobile) {
