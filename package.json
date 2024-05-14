@@ -1,9 +1,9 @@
 {
-n  "version": "1.0.0",
+  "version": "1.0.0",
   "description": "Desafio da Cadastra para novos colaboradores",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/cross-env SERVER_API=http://localhost:5000 npm-run-all --parallel dev server",
+    "start": "npx cross-env SERVER_API=http://localhost:5000 npm-run-all --parallel dev server",
     "start:gp": "npm-run-all --parallel dev server",
     "dev": "gulp",
     "server": "json-server ./db.json --port 5000"
@@ -20,6 +20,7 @@ n  "version": "1.0.0",
   "homepage": "https://github.com/Cadastra-Next-Gen-Company/desenvolvedor-cadastra#readme",
   "devDependencies": {
     "browser-sync": "^2.27.7",
+    "cross-env": "^7.0.3",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -32,7 +33,6 @@ n  "version": "1.0.0",
     "webpack": "^5.62.1"
   },
   "dependencies": {
-    "cross-env": "^7.0.3",
     "json-server": "^0.17.0"
   }
 }

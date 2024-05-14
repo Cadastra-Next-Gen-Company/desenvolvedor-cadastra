@@ -21,4 +21,7 @@ module.exports = (paths) => ({
     ],
   },
   plugins: [],
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
+  },
 });
