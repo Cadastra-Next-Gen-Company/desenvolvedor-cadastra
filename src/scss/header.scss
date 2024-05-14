@@ -1,0 +1,26 @@
+.header {
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  &-content {
+    @include flexCenter;
+    justify-content: space-between;
+
+    .logo {
+      width: 100%;
+      max-width: 120px;
+    }
+
+    .button-cart {
+      @include flexCenter;
+      height: 30px;
+      width: 30px;
+      background: transparent;
+      border-radius: 4px;
+
+      &:hover{
+        background: #00000030;
+      }
+    }
+  }
+}
