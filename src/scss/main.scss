@@ -5,7 +5,8 @@
 @import "header";
 
 @import "../components/cardProduct/cardProducts";
-@import "../components//filter/filter";
+@import "../components/filter/filter";
+@import "../components/modal/modal";
 
 .container {
   width: 100%;
@@ -117,18 +118,18 @@
     .content-page {
       width: 100%;
 
-      .list-products-grid {
-        width: 100%;
-        flex: 1;
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(1, 1fr);
-        padding-bottom: 1rem;
-      }
     }
   }
 
+}
 
+.list-products-grid {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  padding-bottom: 1rem;
 }
 
 .footer {
@@ -144,15 +145,10 @@
 
 @media screen and (min-width: 500px) {
 
-  .main {
-    .hero-main {
-      .content-page {
-        .list-products-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-    }
+  .list-products-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -190,13 +186,7 @@
 
 @media screen and (min-width: 950px) {
 
-  .main {
-    .hero-main {
-      .content-page {
-        .list-products-grid {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-    }
+  .list-products-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }

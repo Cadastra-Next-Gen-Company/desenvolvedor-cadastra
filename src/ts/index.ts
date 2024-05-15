@@ -4,6 +4,7 @@ import { clearFiltersInActionsAside } from "./clearFiltersInActionsAside";
 import { closeFilters } from "./closeFilters";
 import { generateFilters } from "./generateFilters";
 import { generateProducts } from "./generateProducts";
+import { handleCart } from "./handleCart";
 import { openFilters } from "./openFilters";
 
 async function main() {
@@ -14,6 +15,7 @@ async function main() {
   changeFilters()
   clearFiltersInActionsAside()
   applyFilter()
+  handleCart()
 }
 
 document.addEventListener("DOMContentLoaded", main);
