@@ -1,0 +1,1 @@
+export { changeQuantityProductInCart } from './changeQuantityProductInCart'

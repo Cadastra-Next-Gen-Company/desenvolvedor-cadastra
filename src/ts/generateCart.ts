@@ -9,9 +9,12 @@ export function generateCart() {
 
     const listProductsElements = document.createElement("div")
     listProductsElements.classList.add("list-products-grid")
+    listProductsElements.id = "products-in-cart"
+
     listProducts({
       parent: listProductsElements,
-      products: products
+      products: products,
+      inCart: true
     })
 
     modal({

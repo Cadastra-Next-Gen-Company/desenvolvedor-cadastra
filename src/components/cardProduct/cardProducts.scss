@@ -1,6 +1,6 @@
-.product{
+.product {
 
-  &-card{
+  &-card {
     @include flexCenter;
     width: 100%;
     flex-direction: column;
@@ -8,16 +8,16 @@
     border-radius: 4px;
   }
 
-  &-image{
+  &-image {
     margin-bottom: 1rem;
   }
 
-  &-name{
+  &-name {
     font-weight: 500;
     text-transform: uppercase;
   }
 
-  &-button-sale{
+  &-button-sale {
     width: 100%;
     padding: 0.5rem 1rem;
     background: $black;
@@ -25,8 +25,24 @@
     text-transform: uppercase;
     margin-top: 1rem;
 
-    &:hover{
+    &:hover {
       opacity: 0.8;
     }
+  }
+
+  &-area-buttons {
+    margin-top: 1rem;
+    @include flexCenter;
+    width: 100%;
+  }
+
+  &-button-add {
+    @include buttonIcon;
+    background: $color-success;
+  }
+
+  &-button-remove {
+    @include buttonIcon;
+    background: $color-error;
   }
 }
