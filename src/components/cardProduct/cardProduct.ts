@@ -10,6 +10,8 @@ interface CardProductsProps {
 export function cardProduct({ product, parent }: CardProductsProps) {
   const cardProductElement = document.createElement("div")
   cardProductElement.classList.add("product-card")
+  cardProductElement.id = product.id
+  cardProductElement.dataset.product = JSON.stringify(product);
 
   const imageProductElement = document.createElement("img")
   imageProductElement.src = product.image

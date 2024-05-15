@@ -1,3 +1,4 @@
+import { filterProducts } from "./filterProducts"
 
 export function changeFilters() {
   const buttons = document.querySelectorAll(".filter-size")
@@ -19,6 +20,7 @@ export function changeFilters() {
           disabledButtons.classList.remove("active")
         }
       })
+      filterProducts()
     })
   })
 
@@ -29,6 +31,7 @@ export function changeFilters() {
           disabledCheckbox.checked = false
         }
       })
+      filterProducts()
     })
   })
 
@@ -39,6 +42,7 @@ export function changeFilters() {
           disabledCheckbox.checked = false
         }
       })
+      filterProducts()
     })
   })
 
