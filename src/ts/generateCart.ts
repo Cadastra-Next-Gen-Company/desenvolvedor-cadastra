@@ -1,4 +1,4 @@
-import { ListProductsProps, listProducts, modal } from "../components";
+import { ListProductsProps, listProducts, modal, modalResultMessage } from "../components";
 import { localStorageProductsKey } from "../config/localStorageKey";
 import { getItemLocalStorage } from "../utils";
 
@@ -16,6 +16,11 @@ export function generateCart() {
 
     modal({
       children: listProductsElements,
+      title: "Produtos no carrinho"
+    })
+  } else {
+    modalResultMessage({
+      description: "Nenhum produto foi adicionado ao carrinho",
       title: "Produtos no carrinho"
     })
   }
