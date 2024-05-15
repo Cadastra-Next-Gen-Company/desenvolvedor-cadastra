@@ -1,5 +1,6 @@
 import { ListProductsProps, ProductProps, modalResultMessage } from "../../components"
 import { localStorageProductsKey } from "../../config/localStorageKey"
+import { changeIndicatorCart } from "../cart"
 import { getItemLocalStorage, setItemLocalStorage } from "../localStorage"
 
 export function addProductInCart({ product }: { product: ProductProps }) {
@@ -23,6 +24,7 @@ export function addProductInCart({ product }: { product: ProductProps }) {
     }
 
     setItemLocalStorage({ key: localStorageProductsKey, value: productsLocalStorage })
+    changeIndicatorCart(productsLocalStorage.length)
 
     modalResultMessage({
       description: `O produto ${product.name} foi adicionado adicionado ao carrinho com sucesso`,

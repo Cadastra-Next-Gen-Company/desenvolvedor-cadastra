@@ -20,9 +20,25 @@
       width: 30px;
       background: transparent;
       border-radius: 4px;
+      position: relative;
 
-      &:hover{
+      &:hover {
         background: #00000030;
+      }
+
+      #indicator-cart {
+        @include flexCenter;
+        position: absolute;
+        background: $primary-400;
+        color: $white;
+
+        font-size: 12px;
+        border-radius: 1000px;
+        bottom: 0;
+        right: 0;
+
+        height: 20px;
+        width: 20px;
       }
     }
   }

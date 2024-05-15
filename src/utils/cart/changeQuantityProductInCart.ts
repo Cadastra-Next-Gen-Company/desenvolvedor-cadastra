@@ -1,6 +1,7 @@
 import { ListProductsProps, ProductProps } from "../../components";
 import { localStorageProductsKey } from "../../config/localStorageKey";
 import { getItemLocalStorage, setItemLocalStorage } from "../localStorage";
+import { changeIndicatorCart } from "./changeIndicatorCart";
 
 interface ChangeQuantityProductInCart {
   product: ProductProps
@@ -10,6 +11,7 @@ interface ChangeQuantityProductInCart {
 export function changeQuantityProductInCart({ product, action }: ChangeQuantityProductInCart) {
 
   const containerProductsInCartElement = document.getElementById("products-in-cart")
+
 
   const productInCartElement = containerProductsInCartElement.querySelector(`#cart-product-${product.id}`)
 
@@ -38,5 +40,8 @@ export function changeQuantityProductInCart({ product, action }: ChangeQuantityP
   }
 
   setItemLocalStorage({ key: localStorageProductsKey, value: listProductsInLocalStorage })
+
+
+  changeIndicatorCart(listProductsInLocalStorage.length)
 
 }
