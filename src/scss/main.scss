@@ -1,1 +1,212 @@
+@import "fonts";
 @import "reset";
+@import "mixins";
+@import "colors";
+@import "header";
+
+@import "../components/cardProduct/cardProducts";
+@import "../components/filter/filter";
+@import "../components/modal/modal";
+@import "../components/loading/loading";
+@import "../components/notFoundProducts/notFoundProduct";
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding: calc(45px + 2rem) 1rem 0rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .hero-header {
+    @include flexCenter;
+    flex-direction: column;
+
+    &-title {
+      font-size: 1.6rem;
+    }
+
+    .area-button-open-action {
+      @include flexCenter;
+      width: 100%;
+      gap: 0;
+
+      button {
+        padding: 0.5rem 1rem;
+        background: transparent;
+        border: 1px solid $color-text;
+        width: 100%;
+      }
+    }
+  }
+
+  .hero-main {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    .aside {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $white;
+
+      display: flex;
+      flex-direction: column;
+
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      .aside-header {
+        width: 100%;
+        padding: 1rem;
+        border-bottom: 1px solid $color-text;
+
+        .aside-title {
+          text-transform: uppercase;
+          font-size: 1.2rem
+        }
+
+        @include flexCenter;
+        justify-content: space-between;
+
+        button {
+          @include flexCenter;
+          height: 30px;
+          width: 30px;
+          background: transparent;
+
+        }
+
+      }
+
+      #filters {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+
+        flex: 1;
+      }
+
+      .area-buttons-action-filter {
+        @include flexCenter;
+        padding: 1rem;
+
+        button {
+          padding: 0.5rem 1rem;
+          width: 100%;
+          text-transform: uppercase;
+        }
+
+        #apply-filter {
+          background: $primary-400;
+          color: $white;
+        }
+
+        #clear-filter {
+          border: 1px solid $color-text;
+          background: transparent;
+        }
+      }
+    }
+
+    .content-page {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+
+      .button-more-products {
+        background: $primary-400;
+        color: $white;
+        padding: 0.5rem 1.5rem;
+        text-transform: uppercase;
+        align-self: center;
+      }
+    }
+  }
+
+}
+
+.list-products-grid {
+  width: 100%;
+  flex: 1;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  padding-bottom: 1rem;
+}
+
+.footer {
+  background: $black;
+  color: $white;
+  padding: 0.3rem 1rem;
+
+  p {
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+
+  .list-products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    .hero-header {
+      justify-content: space-between;
+      flex-direction: row;
+
+      .area-button-open-action {
+        display: none;
+      }
+    }
+
+    .hero-main {
+      .aside {
+        position: static;
+        width: 100%;
+        max-width: 200px;
+
+        .aside-header {
+          display: none;
+        }
+
+        #filters {
+          padding: 0;
+        }
+
+        .area-buttons-action-filter {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+
+  .list-products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

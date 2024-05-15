@@ -1,0 +1,48 @@
+.product {
+
+  &-card {
+    @include flexCenter;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 4px;
+  }
+
+  &-image {
+    margin-bottom: 1rem;
+  }
+
+  &-name {
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &-button-sale {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: $black;
+    color: $white;
+    text-transform: uppercase;
+    margin-top: 1rem;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &-area-buttons {
+    margin-top: 1rem;
+    @include flexCenter;
+    width: 100%;
+  }
+
+  &-button-add {
+    @include buttonIcon;
+    background: $color-success;
+  }
+
+  &-button-remove {
+    @include buttonIcon;
+    background: $color-error;
+  }
+}

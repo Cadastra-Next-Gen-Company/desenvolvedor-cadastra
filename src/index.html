@@ -10,9 +10,54 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="container header-content">
+      <img src="img/logo-cadastra.png" alt="Logo Cadastra" class="logo" />
+      <button class="button-cart" id="button-cart">
+        <img src="img/icon.png" alt="Icone de carrinho" />
+      </button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="hero-header">
+        <h1 class="hero-header-title">Blusas</h1>
+        <div class="area-button-open-action">
+          <button id="button-open-filter">Filtrar</button>
+          <button id="button-open-order" disabled>Ordenar</button>
+        </div>
+      </div>
+
+      <div class="hero-main">
+        <aside class="aside" id="aside">
+          <div class="aside-header">
+            <h1 class="aside-title" id="aside-title"></h1>
+            <button id="button-close-filter">X</button>
+          </div>
+          <div id="filters">
+
+          </div>
+
+          <div class="area-buttons-action-filter">
+            <button id="apply-filter">Aplicar</button>
+            <button id="clear-filter">Limpar</button>
+          </div>
+        </aside>
+
+        <div class="content-page" id="content-page">
+          <div id="list-products" class="list-products-grid">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+  <footer class="footer">
+    <p>CADASTRA: Implantação de E-commerce VTEX</p>
+  </footer>
 
 </body>
-<h1>Desafio Cadastra</h1>
 
 <script src="bundle.js"></script>
 

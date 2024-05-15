@@ -1,0 +1,45 @@
+.header {
+  width: 100%;
+  padding: 1rem;
+  position: fixed;
+  border-bottom: 1px solid $color-text;
+  background: $white;
+
+  &-content {
+    @include flexCenter;
+    justify-content: space-between;
+
+    .logo {
+      width: 100%;
+      max-width: 150px;
+    }
+
+    .button-cart {
+      @include flexCenter;
+      height: 30px;
+      width: 30px;
+      background: transparent;
+      border-radius: 4px;
+      position: relative;
+
+      &:hover {
+        background: #00000030;
+      }
+
+      #indicator-cart {
+        @include flexCenter;
+        position: absolute;
+        background: $primary-400;
+        color: $white;
+
+        font-size: 12px;
+        border-radius: 1000px;
+        bottom: 0;
+        right: 0;
+
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}
