@@ -6,18 +6,33 @@
   font-size: 100%;
 }
 
-body, #root, html{
+body,
+#root,
+html {
   height: 100%;
 }
 
+h1 {
+  font-weight: 500;
+}
+
+button {
+  border: none;
+}
+
+label,
 button {
   cursor: pointer;
-  border: none;
 }
 
 button,
 input {
   outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
 }
 
 button,
