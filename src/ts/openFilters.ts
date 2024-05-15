@@ -1,8 +1,8 @@
-export function openFilters() {
-  const buttonOpenFiltersElement = document.getElementById("button-open-filter")
-  const containerFiltersElement = document.getElementById("aside")
+import { toogleVisibleFilters } from "../utils";
 
-  buttonOpenFiltersElement.addEventListener("click", () => {
-    containerFiltersElement.style.display = "flex"
+export function openFilters() {
+  toogleVisibleFilters({
+    action: "open",
+    buttonId: "button-open-filter"
   })
 }
