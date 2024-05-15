@@ -15,7 +15,7 @@ export function generateFilters() {
     "Vermelho",
     "Preto",
     "Rosa",
-    "Vinho"
+    "Vinho",
   ]
 
   const sizes: Array<string> = [

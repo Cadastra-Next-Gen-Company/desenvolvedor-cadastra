@@ -4,7 +4,8 @@ export function closeFilters() {
 
   toogleVisibleFilters({
     action: "close",
-    buttonId: "button-close-filter"
+    buttonId: "button-close-filter",
+    clearFilter: true
   })
 
 }
