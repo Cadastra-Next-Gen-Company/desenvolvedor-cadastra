@@ -14,6 +14,11 @@
   margin: 0 auto;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .main {
   padding: calc(45px + 2rem) 1rem 0rem 1rem;
   flex: 1;
