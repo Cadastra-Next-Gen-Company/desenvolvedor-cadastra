@@ -5,6 +5,7 @@
 @import "header";
 
 @import "../components/cardProduct/cardProducts";
+@import "../components//filter/filter";
 
 .container {
   width: 100%;
@@ -21,13 +22,42 @@
 
   .hero-header {
     @include flexCenter;
-    justify-content: space-between;
+    flex-direction: column;
+
+    &-title {
+      font-size: 1.6rem;
+    }
+
+    .area-button-open-action {
+      @include flexCenter;
+      width: 100%;
+      gap: 0;
+
+      button {
+        padding: 0.5rem 1rem;
+        background: transparent;
+        border: 1px solid $color-text;
+        width: 100%;
+      }
+    }
   }
 
   .hero-main {
     width: 100%;
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
+
+    .aside {
+      width: 100%;
+      max-width: 200px;
+
+      #filters {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
 
     .content-page {
       width: 100%;
@@ -36,7 +66,9 @@
         width: 100%;
         flex: 1;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        grid-template-columns: repeat(1, 1fr);
+        padding-bottom: 1rem;
       }
     }
   }
@@ -52,5 +84,44 @@
   p {
     text-align: center;
     font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+
+  .main {
+    .hero-main {
+      .content-page {
+        .list-products-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    .hero-header {
+      justify-content: space-between;
+      flex-direction: row;
+
+      .area-button-open-action {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+
+  .main {
+    .hero-main {
+      .content-page {
+        .list-products-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
   }
 }

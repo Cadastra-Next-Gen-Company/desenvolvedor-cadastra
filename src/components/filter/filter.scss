@@ -1,0 +1,76 @@
+.details-filter {
+  cursor: pointer;
+
+  &[open] {
+    summary {
+      margin-bottom: 0.5rem
+    }
+  }
+
+  summary {
+    @include flexCenter;
+    justify-content: space-between;
+    text-transform: uppercase;
+    list-style-type: '';
+    display: flex;
+  }
+
+  .filter-checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+
+    .checkbox-label {
+      display: flex;
+      gap: 0.5rem;
+
+      input{
+        accent-color: $primary-400;
+      }
+    }
+  }
+
+
+  .filter-button-list {
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    gap: 0.2rem;
+
+    button {
+      @include flexCenter;
+      padding: 0.5rem;
+      border-radius: 4px;
+      width: 30px;
+      height: 30px;
+
+      border: 1px solid $color-text;
+      background: transparent;
+      color: $color-text;
+
+      &:hover {
+        border-color: $primary-400;
+        color: $black;
+      }
+
+      &.active {
+        border-color: $primary-400;
+        color: $black;
+      }
+    }
+
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .details-filter {
+    cursor: default;
+
+    summary {
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
