@@ -1,4 +1,5 @@
-import { ProductProps } from "../components";
+import { ProductProps, notFoundProducts } from "../components";
+import { clearFilters } from "../utils/filters";
 
 export function filterProducts() {
   const products = document.querySelectorAll(".product-card");
@@ -30,6 +31,7 @@ export function filterProducts() {
     }
   });
 
+  let productNotFound;
   products.forEach(productElement => {
     if (productElement instanceof HTMLElement) {
       const productData = JSON.parse(productElement.dataset.product as string) as ProductProps;
@@ -65,9 +67,35 @@ export function filterProducts() {
 
       if (isColorMatch && isSizeMatch && isPriceMatch) {
         productElement.style.display = "flex";
+        productNotFound = true
       } else {
         productElement.style.display = "none";
       }
     }
   });
+
+  const buttonMoreProducts = document.getElementById("more-products")
+  const listProductscontainerElement = document.getElementById("list-products")
+
+  if (!productNotFound) {
+    const productsContainerElement = document.getElementById("content-page")
+
+    notFoundProducts({
+      id: "filter-not-found",
+      parent: productsContainerElement,
+      description: "Nenhum produto corresponde ao filtro",
+      button: {
+        onClick: clearFilters,
+        title: "Limpar Filtro"
+      }
+    })
+    buttonMoreProducts.style.display = "none"
+    listProductscontainerElement.style.display = "none"
+  } else {
+    const notFoundProduct = document.getElementById("filter-not-found")
+    notFoundProduct.remove()
+    listProductscontainerElement.style.display = "grid"
+    buttonMoreProducts.style.display = "block"
+  }
+
 }
