@@ -29,7 +29,7 @@ export function changeQuantityProductInCart({ product, action }: ChangeQuantityP
       product.quantity = 0;
       containerProductsInCartElement.removeChild(productInCartElement);
 
-      listProductsInLocalStorage.slice(indexProduct, 1)
+      listProductsInLocalStorage.splice(indexProduct, 1)
     }
   } else if (action === "add") {
     product.quantity++;
