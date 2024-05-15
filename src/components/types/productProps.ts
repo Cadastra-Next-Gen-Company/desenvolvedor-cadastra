@@ -1,4 +1,4 @@
-export interface Product {
+export interface ProductProps {
   id: string;
   name: string;
   price: number;
@@ -8,3 +8,5 @@ export interface Product {
   size: Array<string>;
   date: string;
 }
+
+export type ListProductsProps = Array<ProductProps>

@@ -1,9 +1,7 @@
-import { Product } from "./Product";
+import { generateProducts } from "./generateProducts";
 
-const serverUrl = "http://localhost:5000";
-
-function main() {
-  console.log(serverUrl);
+async function main() {
+ await generateProducts()
 }
 
 document.addEventListener("DOMContentLoaded", main);
