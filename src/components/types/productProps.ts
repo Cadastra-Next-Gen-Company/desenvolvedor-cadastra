@@ -7,6 +7,7 @@ export interface ProductProps {
   image: string;
   size: Array<string>;
   date: string;
+  quantity?: number
 }
 
 export type ListProductsProps = Array<ProductProps>

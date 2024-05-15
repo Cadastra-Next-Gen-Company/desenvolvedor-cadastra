@@ -1,4 +1,4 @@
-import { formattedPrice } from "../../utils";
+import { addProductInCart, formattedPrice } from "../../utils";
 import { button } from "../button/button";
 import { ProductProps } from "../types";
 
@@ -37,7 +37,7 @@ export function cardProduct({ product, parent }: CardProductsProps) {
     className: "product-button-sale",
     parent: cardProductElement,
     text: "Comprar",
-    onClick: () => console.log(product)
+    onClick: () => addProductInCart({ product })
   })
 
   parent.appendChild(cardProductElement)
