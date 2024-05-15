@@ -117,6 +117,17 @@
 
     .content-page {
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 1rem;
+
+      .button-more-products {
+        background: $primary-400;
+        color: $white;
+        padding: 0.5rem 1.5rem;
+        text-transform: uppercase;
+        align-self: center;
+      }
     }
   }
 

@@ -1,16 +1,18 @@
 interface ButtonProps {
-  className: string
+  className?: string
+  id?: string
   text: string
   parent: HTMLElement
-  onClick: () => void
+  onClick: () => void | Promise<void>
 }
 
-export function button({ text, parent, className, onClick }: ButtonProps) {
+export function button({ text, parent, className, id, onClick }: ButtonProps) {
   const buttonElement = document.createElement("button")
   buttonElement.innerText = text
   buttonElement.classList.add(className)
+  buttonElement.id = id
 
-  buttonElement.addEventListener("click", () => onClick())
+  buttonElement.addEventListener("click", async () => onClick())
 
   parent.appendChild(buttonElement)
 }
