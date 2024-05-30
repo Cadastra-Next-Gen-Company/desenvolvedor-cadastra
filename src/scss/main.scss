@@ -1,1 +1,260 @@
 @import "reset";
+@import "./theme.scss";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    font-size: 16px;
+    background-color: #f9f9f9;
+
+    display: grid;
+    width: 100%;
+    min-height: 100dvh;
+    grid-template-areas: "header header"
+        "aside main"
+        "footer footer";
+    grid-template-columns: 300px 1fr; // responsivo: grid-template-columns: 0px 100%; e depois o aside position fixed e fazer animacao com classe active
+
+    @media (max-width: $mobile) {
+        grid-template-columns: 0px 100%;
+    }
+}
+
+aside {
+    overflow: visible;
+    grid-area: aside;
+    background-color: $white-color;
+    width: 100%;
+
+    nav {
+        width: 100%;
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .head {
+                border-bottom: 0.125rem solid $gray-one;
+                margin-bottom: 0.9375rem;
+                display: flex;
+                padding: 0.9375rem;
+                font-size: 1.75rem;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .color-container {
+                display: flex;
+                flex-direction: column;
+                gap: 0.3125rem;
+                padding-left: 0.9375rem;
+
+                .color-item {
+
+                  label {
+                    padding-left: 0.625rem;
+                  }
+                }
+            }
+
+            .size-container {
+                padding-left: 0.9375rem;
+                display: flex;
+                flex-wrap: wrap;
+                width: 50%;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0.5rem;
+                
+                .size-button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 1rem;
+                    padding: 0.3125rem;
+                    border: 0.0625rem solid $gray-one;
+                    background-color: $white-color;
+                    color: $gray-one;
+                    cursor: pointer;
+                }
+                
+                .size-button.selected {
+                    color: $black-color;
+                    border-color: $primary-color;
+                }
+            }
+
+            .price-container {
+                padding-left: 0.9375rem;
+            }
+
+            button {
+                display: flex;
+                width: 100%;
+                font-size: 1.5rem;
+                border: transparent;
+                background-color: $white-color;
+
+                legend {
+                    padding: 0.9375rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $mobile) {
+        position: fixed;
+        z-index: 9;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        transition: 1s ease-in-out;
+
+        &.active {
+            left: 0;
+        }
+    }
+}
+
+.header {
+    grid-area: header;
+    border-bottom: 2px solid;
+    border-color: $gray-one;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    height: 2.75rem;
+    align-items: center;
+    padding-left: 2.1875rem;
+    position: relative;
+
+    .cart-container {
+
+        position: relative;
+        display: inline-block;
+
+        .cart_image {
+            margin-right: 15px;
+            width: 1.0625rem;
+            height: 1.25rem;
+        }
+
+        .cart-count {
+            position: absolute;
+            bottom: -0.3125rem;
+            right: 0.625rem;
+            background-color: $primary-color;
+            color: white;
+            border-radius: 50%;
+            width: 15px; /* Ajuste conforme necessário */
+            height: 15px; /* Ajuste conforme necessário */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+          }
+    }
+
+
+    p {
+        position: absolute;
+        background-color: $primary-color;
+        color: $gray-one;
+    }
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .title_and_filter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-top: 1.5rem;
+        z-index: 1;
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1.05rem;
+            font-weight: 400;
+        }
+
+        .filter_and_order {
+            display: flex;
+            width: 100%;
+
+            button {
+                height: 3.0625rem;
+                font-size: 1.5rem;
+                font-weight: 400;
+                width: 100%;
+                color: $gray-one;
+                border: 0.0625rem solid $gray-one;
+                margin-bottom: 1.05rem;
+
+                &:first-child {
+                    border-right: none;
+                }
+            }
+        }
+    }
+
+    #products-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        max-height: 600px; // Altura máxima para a rolagem
+        overflow-y: scroll; // Habilita a rolagem vertical
+        gap: 0.9375rem;
+
+        .product-item {
+            display: flex;
+            flex-direction: column;
+            width: 10.125rem;
+            height: 22.2881rem;
+            gap: 0.8rem;
+
+            img {
+                height: 100%;
+            }
+
+            button {
+                background-color: $black-color;
+                color: $white-color;
+                padding: 0.375rem 0rem;
+            }
+        }
+    }
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    
+    button {
+        background-color: $primary-color;
+        color: $white-color;
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: pointer;
+    }
+}

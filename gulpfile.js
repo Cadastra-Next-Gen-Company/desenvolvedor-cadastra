@@ -14,6 +14,7 @@ const paths = {
   scripts: {
     src: "src/ts/index.ts",
     watch: "src/ts/**/*.ts",
+
   },
   styles: {
     src: "src/scss/main.scss",
@@ -26,6 +27,7 @@ const paths = {
   },
   dest: "dist",
   temp: ".tmp",
+
 };
 
 function clean() {
